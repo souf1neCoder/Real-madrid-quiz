@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+:root {
+  --main-color: #5d8fd4;
+  --primary-color: #004996;
+  --black: #000;
+  --fff: #fff;
+  --light: #f5f6fa;
+  --dark-color: #373737;
+  --transtion: all 0.3s ease-in-out;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+img {
+  max-width: 100%;
+}
+.img_logo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.navbar-brand {
+  color: var(--primary-color);
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+.navbar-brand span {
+  margin-left: 5px;
+  vertical-align: bottom;
+  font-family: "Oswald", sans-serif;
+}
+.navbar-brand:hover {
+  color: var(--primary-color);
+}
+.nav-link {
+  color: var(--primary-color);
+  font-size: 1rem;
+  transition: var(--transtion);
+}
+.nav-link:hover {
+  color: var(--dark-color);
+}
+.navbar {
+  background-color: var(--light);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-toggler:active,
+.navbar-toggler:focus {
+  border-color: transparent;
+  outline: none;
+}
+.navbar-collapse {
+  transition: var(--transtion);
+}
+/*  
+*/
+
+main {
+  width: 100%;
+  height: 90vh;
+
+  position: relative;
+}
+main::after {
+  content: "";
+  background: url(../images/bg.png) no-repeat center center fixed;
+  opacity: 0.1;
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.welcome_text,
+.quiz-wrapper {
+  width: 50%;
+}
+
+.welcome_text h2,.finish-text {
+  color: var(--primary-color);
+  font-family: "Oleo Script", cursive;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 2.5rem;
+  pointer-events: none;
+}
+.finish-text{
+  font-size:3rem;
+}
+.welcome_text h4 {
+  color: var(--dark-color);
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+.welcome_text .btn {
+  color: var(--light);
+  background-color: var(--primary-color);
+}
+.welcome_text .btn:active {
+  box-shadow: none !important;
+  outline: none !important;
+  transform: scale(0.97);
+  transition: var(--transtion);
+}
+/*
+    */
+.options {
+  margin-bottom: 1rem;
+}
+.form-check{
+    width:100%;
+    padding:1rem;
+    background:rgba(245, 246, 250, 0.6);
+    border: 1px solid #ccc;
+    margin-bottom: .6rem;
+    border-radius: 1rem;
+}
+.form-check-label{
+    width:100% !important;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+}
+.form-check-input{
+    opacity:0;
+}
+
+.form-check.active{
+    background-color: var(--primary-color);
+    border:none;
+}
+.form-check.active .form-check-label{
+    color:var(--fff);
+}
+.quiz h2{
+  letter-spacing: 1px;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  color:var(--primary-color);
+  text-transform: capitalize;
+}
+.quiz .nextBtn, .startBtn{
+  background-color: var(--primary-color);
+  color: var(--fff);
+  border: none;
+  padding: .5rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: var(--transtion);
+}
+.startBtn{
+  padding: .77rem 2.22rem;
+  font-size: 1.44rem;
+}
+.result{
+
+  font-size: 2rem;
+  color:var(--dark-color);
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.result span{
+  color : var(--primary-color)
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+  height:60px;
+  background-color: var(--light);
+}
+footer p{
+  color:var(--dark-color);
+  font-weight: 700;
+  margin-bottom: 0 !important;
+}
+footer span{
+  color: var(--primary-color);
+  font-weight: 800;
+}
+.progress_bar{
+  width: 100%;
+  margin: 1rem 0;
+  height: 1.6rem;
+  background: transparent;
+  border-radius: 10px;
+  position: relative;
+}
+.progress_bar .bar {
+  position: absolute;
+  inset: 0;
+  width: 0px;
+  height: 100%;
+  background: var(--main-color);
+}
+
+@media only screen and (max-width: 768px) {
+  .welcome_text,
+.quiz-wrapper {
+  width: 90%;
+}
+}
+@media only screen and (max-width: 500px) {
+  .welcome_text,
+.quiz-wrapper {
+  width: 95%;
+}
+.progress_bar{
+  height: 1.33rem;
+  margin: 0.8rem 0;
+}
+.quiz h2{
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+.form-check{
+  padding: 0.8rem;
+}
+.img_logo {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.navbar-brand{
+  font-size: 1.8rem;
+}
+}
+@media screen and (max-width: 991px) {
+  .navbar .nav-item {
+    text-align: center;
+    margin:2rem 0 !important;
+  }
+}
